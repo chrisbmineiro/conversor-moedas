@@ -13,7 +13,7 @@ Este é um projeto de conversão de moedas desenvolvido em **Java** que utiliza 
 ## Pré-requisitos
 
 - **Java 17** ou superior
-- **Gson** como dependências
+- **Gson** biblioteca
 - Acesso à **API ExchangeRate**
 
 ## Como Funciona
@@ -27,7 +27,7 @@ Este é um projeto de conversão de moedas desenvolvido em **Java** que utiliza 
 
 ### Dependências
 
-O projeto utiliza o arquivos jar para gerenciamento de dependências. Certifique-se de que o arquivo jar `gson-2.11.0` que contem a biblioteca `Gson` esteja no Project Structure -> Modules -> Dependencies do projeto:
+O projeto utiliza o arquivos jar para gerenciamento de dependências. Certifique-se de que o arquivo jar `gson-2.11.0` que contem a biblioteca `Gson` esteja no classpath de dependencias do projeto:
 
 ### API Key
 
@@ -71,9 +71,10 @@ public enum Moeda {
 Essa classe contém a lógica para consultar a API e obter a taxa de câmbio em tempo real. Utiliza a biblioteca **Gson** para fazer o parsing do JSON retornado pela API.
 
 ```java
-package modelos;
+package models;
 
 import com.google.gson.Gson;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -121,11 +122,11 @@ public class TaxaCambioService {
 O ponto de entrada do programa, responsável por gerenciar o menu e interagir com o usuário. O usuário escolhe as moedas para conversão e insere o valor a ser convertido.
 
 ```java
-package principal;
+package main;
 
-import modelos.Conversao;
-import modelos.Moeda;
-import modelos.TaxaCambioService;
+import utils.Conversao;
+import models.Moeda;
+import services.TaxaCambioService;
 
 import java.util.Scanner;
 

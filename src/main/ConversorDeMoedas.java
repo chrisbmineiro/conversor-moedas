@@ -1,8 +1,8 @@
-package principal;
+package main;
 
-import modelos.Conversao;
-import modelos.Moeda;
-import modelos.TaxaCambioService;
+import utils.Conversao;
+import models.Moeda;
+import services.TaxaCambioService;
 
 import java.util.Scanner;
 

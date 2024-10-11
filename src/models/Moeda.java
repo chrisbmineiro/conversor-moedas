@@ -1,4 +1,4 @@
-package modelos;
+package models;
 
 public enum Moeda {
     USD, // Dólar Americano

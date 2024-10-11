@@ -1,6 +1,9 @@
-package modelos;
+package services;
 
 import com.google.gson.Gson;
+import models.APIResponse;
+import models.Moeda;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -10,7 +13,7 @@ public class TaxaCambioService {
 
     private static final String API_URL = "https://v6.exchangerate-api.com/v6/4e4ccca09fe861dbb31eef1a/latest/";
 
-    // Métod para buscar a taxa de câmbio de uma moeda base para uma moeda de destino
+    // Função para buscar a taxa de câmbio de uma moeda base para uma moeda de destino
     public double obterTaxaDeCambio(Moeda base, Moeda destino) {
         try {
             URL url = new URL(API_URL + base.name());

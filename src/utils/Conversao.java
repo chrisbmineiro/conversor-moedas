@@ -1,4 +1,7 @@
-package modelos;
+package utils;
+
+import models.Moeda;
+import services.TaxaCambioService;
 
 public class Conversao {
 
@@ -9,7 +12,7 @@ public class Conversao {
         this.taxaCambioService = taxaCambioService;
     }
 
-    // Métod que realiza a conversão de moeda
+    // Função que realiza a conversão de moeda
     public double converter(Moeda base, Moeda destino, double valor) {
         double taxa = taxaCambioService.obterTaxaDeCambio(base, destino);
         if (taxa != -1) {
