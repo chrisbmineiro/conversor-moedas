@@ -1,7 +1,6 @@
-package utils;
+package services;
 
 import models.Moeda;
-import services.TaxaCambioService;
 
 public class Conversao {
 
